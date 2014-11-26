@@ -1,0 +1,40 @@
+  cd Документы
+  mkdir gitHW
+  cd gitHW
+  git init
+  nano fileA
+  nano fileB
+  git add .
+  git commit -m "added files A and B"
+  git checkout -b branch1
+  mkdir repoB
+  cd repoB
+  git clone /home/earlvik/Документы/gitHW/.git/
+  git checkout branch1
+  cd gitHW
+  nano fileC
+  git add fileC
+  git commit -m "added file C"
+  git push /home/earlvik/Документы/gitHW/.git/
+  git remote add repoA /home/earlvik/Документы/gitHW/.git/
+  git push repoA
+  cd ../../
+  nano fileC
+  git stage fileC
+  git commit -m "said hello"
+  cd repoB/gitHW
+  nano fileC
+  git stage fileC
+  git commit -m "said hi"
+  git fetch repoA
+  git merge repoA/branch1
+  git status
+  nano fileC
+  git add fileC
+  git commit -m "resolving conflict"
+  git merge repoA/branch1
+  cd ../../
+  git remote add repoB /home/earlvik/Документы/gitHW/repoB/gitHW/.git/
+  git fetch repoB
+  git merge repoB/branch1
+
